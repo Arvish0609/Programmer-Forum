@@ -1,0 +1,16 @@
+<form>
+    
+    <input type="text" class="form-control" placeholder="Title" name="title" [(ngModel)]="blogData.title"><br>
+    <textarea name="blog_content" rows="10" class="form-control" placeholder="Write it down..." name="content" [(ngModel)]="blogData.content"></textarea><br>
+    <input type="text" class="form-control" placeholder="Name" name="name" [(ngModel)]="blogData.blogger_name" ><br>
+    <select class="form-control" name="rating" id="rating" name="rating" [(ngModel)]="blogData.rating">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+    </select><br>
+
+    <button class="btn btn-success form-control" (click)="onAddBlog()" >Add Blog</button>
+
+</form>

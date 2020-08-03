@@ -1,0 +1,47 @@
+<div class="container">
+    <div class="col-md-6 offset-md-3">
+        <form>
+            <div class="form-group">
+                <br><br><br><br>
+                <div class="row justify-content-center">
+                    <div class="col-2">
+                        <h1 class="font-weight-bold">Login</h1>
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col">
+                        <input type="text" class="form-control" name="userId" placeholder="Registered userId or Email"
+                            required [(ngModel)]="userId" #user_Id="ngModel">
+                        <div class="justify" [hidden]="user_Id.valid && !user_Id.invalid || user_Id.untouched">
+                            Please provide your username or email</div>
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col">
+                        <input type="password" class="form-control" name="password" placeholder="Enter your Password"
+                            required [(ngModel)]="password" #pwd="ngModel">
+                        <div class="justify" [hidden]="pwd.valid && !pwd.invalid || pwd.untouched">
+                            Please provide your password</div>
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col">
+                        <button class="btn btn-block btn-primary" type="submit">Login</button>
+                    </div>
+                </div>
+                <br>
+                    <div class="row justify-content-between">
+                        <div class="col">
+                            <a href=""  [routerLink]="['/signup']">Create New Account</a>
+                        </div>
+                        <div class="col-4 align-right">
+                            <a href="">Forgot Password?</a>
+                        </div>
+                    </div>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,15 @@
+.field-error{
+    border: 1px solid red;
+}
+.container-fluid{
+    background-image: url('../../assets/signup.jpg');
+}
+input{
+    opacity: 0.8;
+}
+.visibility{
+    display: none;
+}
+.align-center{
+    text-align: center;
+}

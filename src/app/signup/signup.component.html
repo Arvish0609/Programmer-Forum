@@ -1,0 +1,97 @@
+<div class="container-fluid">
+  <div class="container">
+    <form #form=ngForm (ngSubmit)="onSubmit(form)">
+      <div class="form-group">
+        <br><br><br><br>
+        <div class="row ">
+
+          <div class="col-md-5">
+            <div class="row">
+              <div class="col-md-9 offset-md-2">
+                <h1 style="color: azure;" class="font-weight-bold">Sign-Up Today</h1>
+              </div>
+            </div>
+            <br>
+            <div class="row row-cols-2">
+              <div class="col">
+                <input id="fname" class="form-control" pattern="[A-Za-z]{3,}"
+                  [class.field-error]="form.submitted && fnameField.invalid" name="fname" type="text"
+                  placeholder="Enter your First Name" required [(ngModel)]="first_name" #fnameField="ngModel">
+                <div id="fNameValidation" [hidden]="fnameField.valid || fnameField.untouched " class="font-weight-light"
+                  style="color: azure;">Should only contain alphabets and greater than 3 characters</div>
+                <div [hidden]="fnameField.valid && !fnameField.invalid || fnameField.untouched" style="color: azure;">
+                  Please fill your first name</div>
+              </div>
+              <div class="col">
+                <input class="form-control" pattern="[A-Za-z]{3,}"
+                  [class.field-error]="form.submitted && lnameField.invalid" name="lname" type="text"
+                  placeholder="Enter your Last Name" required [(ngModel)]="last_name" #lnameField="ngModel">
+                <div [hidden]="lnameField.valid || lnameField.untouched " class="font-weight-light"
+                  style="color: azure;"> Should only contain alphabets and greater than 3 characters</div>
+
+              </div>
+            </div>
+            <br>
+            <div class="row">
+              <div class="col">
+                <input class="form-control" pattern="[A-Za-z0-9_]{1,15}"
+                  [class.field-error]="form.submitted && idField.invalid" type="text" name="id"
+                  placeholder="Set up an ID" required [(ngModel)]="id" #idField="ngModel">
+                <div [hidden]="idField.valid || idField.untouched " class="font-weight-light" style="color: azure;">
+                  Should be a combination of alphabets and numbers and greater than 3 characters</div>
+
+              </div>
+            </div>
+            <br>
+            <div class="row">
+              <div class="col">
+                <input class="form-control" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                  [class.field-error]="form.submitted && emailField.invalid" type="text" name="email"
+                  placeholder="Enter your Email" required [(ngModel)]="email" #emailField="ngModel">
+                <div [hidden]="emailField.valid || emailField.untouched " class="font-weight-light"
+                  style="color: azure;">E.g. abc@xyz.com, abc@xyz.in</div>
+
+              </div>
+            </div>
+            <br>
+            <div class="row">
+              <div class="col">
+                <input id="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" class="form-control"
+                  [class.field-error]="form.submitted && pwdField.invalid" type="password" name="password"
+                  placeholder="Enter your Password" required [(ngModel)]="password" #pwdField="ngModel">
+                <div [hidden]="pwdField.valid || pwdField.untouched " class="font-weight-light" style="color: azure;">
+                  Upper case + Lower case + number + >= 8 characters </div>
+              </div>
+            </div>
+            <br>
+            <div class="row">
+              <div class="col">
+                <input id="confirm_password" class="form-control"
+                  [class.field-error]="form.submitted && cnfpwdField.invalid" type="password" name="cnf_pwd"
+                  placeholder="Confirm your Password" required [(ngModel)]="cnf_password" #cnfpwdField="ngModel">
+                <div class="font-weight-light"></div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <span id="message"></span>
+              </div>
+            </div>
+            <br>
+            <div class="row">
+              <div class="col">
+                <button class="btn btn-block btn-primary" type="submit">Sign-Up</button>
+                <br>
+                <p class="align-center" style="color: azure;">Already have an account? <a [routerLink]="['/login']" 
+                  style="color: yellow;" class="font-weight-bold">Login here</a></p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-7">
+          </div>
+        </div>
+      </div>
+      <br><br><br><br>
+    </form>
+  </div>
+</div>

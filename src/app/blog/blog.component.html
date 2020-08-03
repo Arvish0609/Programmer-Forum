@@ -1,0 +1,12 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-5">
+            <app-catch-details (addBlog)=onBlogAdded($event)></app-catch-details>
+        </div>
+        <div class="col-md-7">
+            <app-blog-details [blogDetails]="blogs"></app-blog-details>
+        </div>
+    </div>
+</div>
+
+
